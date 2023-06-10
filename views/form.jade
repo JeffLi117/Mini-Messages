@@ -1,0 +1,11 @@
+extends layout
+
+block content
+  h1 New Message Form
+    form(action='/new', method='POST')
+        p
+        | Name: 
+        input(type='text', name='authorname', value='')
+        | Text: 
+        input(type='text', name='text', value='')
+        input(type='submit', value='Submit')
