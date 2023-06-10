@@ -1,8 +1,67 @@
+:root {
+  --one: #bbe9db; 
+  --two: #aeccc6;
+  --three: #9ba6a5;
+  --four: #757a79;
+}
+
 body {
+  background-color: var(--one);
   padding: 50px;
   font: 14px "Lucida Grande", Helvetica, Arial, sans-serif;
 }
 
-a {
-  color: #00B7FF;
+h1 {
+  font-size: 2rem;
+}
+
+p {
+  font-size: 1.5rem;
+}
+
+span.messageSpan {
+  color: var(--three);
+  transition: all .2s ease-in;
+}
+
+span.messageSpan:hover {
+  color: var(--four);
+}
+
+div.textBox {
+  border: 2px solid rgb(0, 0, 0);
+  border-radius: 12px;
+  padding: 1rem;
+  margin: 8px;
+}
+
+div.textBox li {
+  list-style-type: none;
+}
+
+li.userName {
+  font-weight:700;
+}
+
+span.afterUser {
+  color: gray;
+  opacity: 0.9;
+  font-weight:500;
+}
+
+#footer {
+  position: absolute;
+  bottom: 0;
+  height: 5vh;
+  min-height: 25px;
+}
+
+#footer img {
+  width: 25px;
+  height: 25px;
+  transition: transform .4s ease-in;
+}
+
+#footer img:hover {
+  transform: rotate(360deg);
 }

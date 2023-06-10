@@ -3,8 +3,16 @@ extends layout
 block content
   h1= title
   p Welcome to #{title}
+  p Feel free to leave a 
+    a(href="https://github.com/JeffLi117")
+      span.messageSpan message
   ul
     each message in messages
-       li Text is #{message.text}
-       li Message is #{message.user}
-       li Date added is #{message.added}
+      div.textBox 
+        li.userName #{message.user} 
+          span.afterUser at #{message.added}
+        li #{message.text}
+
+  p#footer 
+    a(href="https://github.com/JeffLi117")
+      img(src='../images/github-mark.svg', alt='Github icon')
