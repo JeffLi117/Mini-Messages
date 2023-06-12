@@ -1,11 +1,15 @@
 extends layout
 
 block content
-  h1 New Message Form
+  h1 Craft your message here
+  p#back 
+    a(href="/")
+      img(src='../images/icons8-back-50.png', alt='back arrow icon')
     form(action='/new', method='POST')
-        p
-        | Name: 
+      div.inputBox
+        p Name: 
         input(type='text', name='authorname', value='')
-        | Text: 
+      div.inputBox
+        p Text: 
         input(type='text', name='text', value='')
-        input(type='submit', value='Submit')
+        input(type='submit', value='Submit').submitBtn

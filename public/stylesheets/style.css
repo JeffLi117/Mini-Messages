@@ -49,6 +49,53 @@ span.afterUser {
   font-weight:500;
 }
 
+div.inputBox {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: start;
+}
+
+p#back {
+  position: absolute;
+  top: 0.5rem;
+  left: 0.5rem;
+}
+
+p#back img {
+  transition: transform .4s ease-in;
+}
+
+p#back:hover img {
+  animation: shake 0.24s;
+  animation-iteration-count: 1;
+}
+
+@keyframes shake {
+  0% { transform: translateX(0) }
+ 25% { transform: translateX(5px) }
+ 50% { transform: translateX(-5px) }
+ 75% { transform: translateX(5px) }
+ 100% { transform: translateX(0) }
+}
+
+input.submitBtn {
+  padding: 10px;
+  margin: 1rem;
+  margin-left: 0px;
+  border-radius: 12px;
+  background-color: var(--two);
+  border: 2px solid var(--four);
+  transition: all 0.35s ease-in;
+}
+
+input.submitBtn:hover {
+  color: white;
+  background-color: var(--four);
+  border: 2px solid var(--two);
+}
+
+
 #footer {
   position: absolute;
   bottom: 0;
@@ -64,4 +111,36 @@ span.afterUser {
 
 #footer img:hover {
   transform: rotate(360deg);
+}
+
+/* width */
+::-webkit-scrollbar {
+  width: 10px;
+}
+
+/* Track */
+::-webkit-scrollbar-track {
+  background: var(--four);
+}
+
+/* Handle */
+::-webkit-scrollbar-thumb {
+  background: var(--two);
+}
+
+/* Handle on hover */
+::-webkit-scrollbar-thumb:hover {
+  background: var(--three);
+}
+
+a:link, a:visited {
+  color: purple;
+}
+
+a:hover {
+  color: hotpink;
+}
+
+a:active {
+  color: var(--one);
 }

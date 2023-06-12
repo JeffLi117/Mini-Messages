@@ -17,22 +17,34 @@ connection.once("open", () => {
   console.log("MongoDB DB connection established successfully.")
 })
 
-let messages;
-
 const middleWare = async (req, res, next) => {
-  var query = Message.aggregate([
+  try {
+    var query = Message.aggregate([
+      { $sort: {time_added: -1}}, 
+      { $limit: 10}
+    ]);
+    const data = await query.exec();
+    console.log(data);
+    req.messages = data;
+    next();
+  } catch(err) {
+    console.log("err: ", err); 
+    next(err);
+  }
+
+  /* var query = Message.aggregate([
     { $sort: {time_added: -1}}, 
     { $limit: 10}
   ]).then((data) => {
     console.log(data);
     messages = data;
     next();
-  });
+  }); */
 }
 
 /* GET home page. */
 router.get('/', middleWare, function(req, res, next) {
-  res.render('index', { title: 'Mini Messageboard', messages: messages });
+  res.render('index', { title: 'Mini Messageboard', messages: req.messages });
 });
 
 router.get('/new', function(req, res, next) {
