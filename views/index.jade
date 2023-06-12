@@ -4,14 +4,14 @@ block content
   h1= title
   p Welcome to #{title}
   p Feel free to leave a 
-    a(href="https://github.com/JeffLi117")
+    a(href="/new")
       span.messageSpan message
   ul
     each message in messages
       div.textBox 
-        li.userName #{message.user} 
-          span.afterUser at #{message.added}
-        li #{message.text}
+        li.userName #{message.user_name} 
+          span.afterUser at #{message.time_added}
+        li #{message.message_text}
 
   p#footer 
     a(href="https://github.com/JeffLi117")
