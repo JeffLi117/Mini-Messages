@@ -29,13 +29,6 @@ const middleWare = async (req, res, next) => {
     next();
   });
 }
-var query = Message.aggregate([
-  { $sort: {time_added: -1}}, 
-  { $limit: 10}
-]).then((data) => {
-  console.log(data);
-  messages = data;
-});
 
 /* GET home page. */
 router.get('/', middleWare, function(req, res, next) {
